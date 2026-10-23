@@ -13,6 +13,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,800;1,900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js')</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -34,10 +35,10 @@
 }
 </script>
 </head>
-<body class="intro-lock">
+<body>
 
 <!-- ============ INTRO ============ -->
-<div id="intro" class="intro" aria-label="Presentación de Cesano">
+<div id="intro" class="intro" role="dialog" aria-modal="true" aria-label="Presentación de Cesano">
   <div class="intro__panel intro__panel--orange" aria-hidden="true"></div>
   <div class="intro__panel intro__panel--white">
     <div class="intro__grid" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
@@ -178,8 +179,8 @@
       <a href="#contacto" class="btn btn--white btn--lg" data-wa="garantia" data-msg="Hola Cesano, quiero un presupuesto con garantía de 5 años.">Pedí tu presupuesto</a>
     </div>
     <figure class="garantia__cert reveal">
-      <img src="assets/img/garantia-certificado.webp" alt="Boceto del certificado de garantía de Cesano" loading="lazy" width="1400" height="1000">
-      <figcaption>Boceto del certificado</figcaption>
+      <img src="assets/img/entrega-llaves.webp" alt="Imagen de referencia: entrega de llaves de un auto terminado" loading="lazy" width="1344" height="768">
+      <figcaption>Recién salido</figcaption>
     </figure>
   </div>
   <svg class="garantia__franja franja franja--white" viewBox="0 1001.73 593.21 78.27" aria-hidden="true">
@@ -194,14 +195,15 @@
   <div class="wrap">
     <p class="eyebrow">Seguros</p>
     <h2 class="h2 reveal">¿Chocaste? <span class="o">Del seguro nos ocupamos nosotros.</span></h2>
-    <div class="pasos" role="tablist" aria-label="Cómo es el trámite con el seguro">
-      <button class="paso is-on" role="tab" aria-selected="true"><span class="nro">01</span><b>Mandanos fotos</b><small>Tres fotos del daño y los datos de tu póliza, por WhatsApp.</small><i class="paso__bar"></i></button>
-      <button class="paso" role="tab" aria-selected="false"><span class="nro">02</span><b>Hacemos el presupuesto</b><small>Y lo gestionamos con tu aseguradora. Vos no tenés que andar llamando.</small><i class="paso__bar"></i></button>
-      <button class="paso" role="tab" aria-selected="false"><span class="nro">03</span><b>Traés el auto</b><small>Coordinamos el día para que lo dejes lo justo y necesario.</small><i class="paso__bar"></i></button>
-      <button class="paso" role="tab" aria-selected="false"><span class="nro">04</span><b>Te lo entregamos</b><small>Listo y con 5 años de garantía, como todos nuestros trabajos.</small><i class="paso__bar"></i></button>
+    <div class="pasos" aria-label="Cómo es el trámite con el seguro">
+      <button type="button" class="paso is-on" aria-pressed="true"><span class="nro">01</span><b>Mandanos fotos</b><small>Sacale tres fotos al daño y mandalas por WhatsApp.</small><i class="paso__bar"></i></button>
+      <button type="button" class="paso" aria-pressed="false"><span class="nro">02</span><b>Hacemos el presupuesto</b><small>Y lo gestionamos con tu aseguradora. Vos no tenés que andar llamando.</small><i class="paso__bar"></i></button>
+      <button type="button" class="paso" aria-pressed="false"><span class="nro">03</span><b>Traés el auto</b><small>Coordinamos con vos el día de ingreso.</small><i class="paso__bar"></i></button>
+      <button type="button" class="paso" aria-pressed="false"><span class="nro">04</span><b>Te lo entregamos</b><small>Listo y con 5 años de garantía, como todos nuestros trabajos.</small><i class="paso__bar"></i></button>
     </div>
     <div class="aseg reveal">
       <p class="aseg__t">Trabajamos con tu seguro. Entre otras: <span class="confirmar">[CONFIRMAR lista]</span></p>
+      <button type="button" class="ticker__pause" aria-pressed="false">Pausar</button>
       <div class="ticker" aria-label="Aseguradoras">
         <ul class="ticker__track">
           <li>Allianz</li><li>Sancor Seguros</li><li>La Segunda</li><li>Mapfre</li><li>Río Uruguay Seguros</li><li>Seguros Rivadavia</li><li>San Cristóbal</li><li>Federación Patronal</li><li>Mercantil Andina</li><li>Nación Seguros</li><li>Zurich</li><li>Triunfo Seguros</li><li>Berkley</li><li>El Norte</li><li>Segurcoop</li><li>Boston</li><li>SMG Seguros</li>
@@ -260,7 +262,7 @@
       <figure class="hist__img reveal"><img src="assets/img/historia-manos-generaciones.webp" alt="Imagen de referencia: manos de distintas generaciones trabajando sobre la chapa" loading="lazy" width="1344" height="768"></figure>
       <ol class="tl" style="--p:0">
         <li class="tl__i"><span class="tl__y">1959</span><b>Calle Lautaro</b><p>El fundador llega de Buenos Aires y abre el taller. Guardabarros hechos a mano, carrozados y hasta carrozas fúnebres, con herramientas que se fabricaba él mismo.</p></li>
-        <li class="tl__i"><span class="tl__y">1978</span><b>Hernandarias</b><p>Primer salto: la segunda generación lleva el taller a un lugar más grande.</p></li>
+        <li class="tl__i"><span class="tl__y">1978</span><b>Hernandarias</b><p>Primer salto: la segunda generación muda el taller a Hernandarias.</p></li>
         <li class="tl__i"><span class="tl__y">2001</span><b>Av. Armada Argentina 179</b><p>Segundo salto: la planta de hoy, con unos 2.000&nbsp;m² entre taller, galpones y depósito.</p></li>
         <li class="tl__i"><span class="tl__y">Hoy</span><b>Tercera generación</b><p>Tercer salto: 30 personas, hasta 60 autos en proceso y tecnología nueva, con la misma firma.</p></li>
       </ol>
@@ -326,7 +328,7 @@
     <img src="assets/logo/vertical-color.svg" alt="Cesano" class="pie__logo" width="626" height="483" loading="lazy">
     <div>
       <p><b>Taller José Luis Cesano SRL</b><br>Chapa y pintura en Córdoba desde 1959.</p>
-      <p>Av. Armada Argentina 179, Córdoba<br><a href="tel:+543514617662">(0351) 461-7662</a> · <a href="https://www.instagram.com/tallercesano/" target="_blank" rel="noopener">@tallercesano</a></p>
+      <p><a href="https://www.google.com/maps/search/?api=1&query=Av.+Armada+Argentina+179,+C%C3%B3rdoba,+Argentina" target="_blank" rel="noopener">Av. Armada Argentina 179, Córdoba</a><br>Horarios: <span class="confirmar">[CONFIRMAR]</span><br><a href="tel:+543514617662">(0351) 461-7662</a> · <a href="https://www.instagram.com/tallercesano/" target="_blank" rel="noopener">@tallercesano</a></p>
     </div>
     <nav class="pie__nav" aria-label="Pie"><a href="#servicios">Servicios</a><a href="#garantia">Garantía</a><a href="#seguros">Seguros</a><a href="#historia">Historia</a><a href="#trabaja">Trabajá con nosotros</a><a href="?intro">Ver la intro de nuevo</a></nav>
   </div>
