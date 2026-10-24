@@ -295,7 +295,7 @@ bloque('antes-despues', () => {
 
 /* ---------------- SCROLL: HEADER, LÍNEA DE TIEMPO, PARALLAX ---------------- */
 bloque('scroll', () => {
-  const hdr = $('.hdr'), tl = $('.tl'), heroImg = $('.hero__img img');
+  const hdr = $('.hdr'), tl = $('.tl'), heroImg = $('.hero__img img'), ruta = $('.ruta');
   const tlItems = $$('.tl__i');
   let tick = false;
   function onScroll() {
@@ -307,6 +307,11 @@ bloque('scroll', () => {
       const marca = vh * 0.62;
       tl.style.setProperty('--p', Math.max(0, Math.min(1, (marca - r.top) / r.height)).toFixed(3));
       tlItems.forEach((li) => li.classList.toggle('is-on', li.getBoundingClientRect().top < marca));
+    }
+    // el auto de "Recién salido" cruza la pantalla de derecha a izquierda según el scroll
+    if (ruta && !reduce) {
+      const rr = ruta.getBoundingClientRect();
+      if (rr.bottom > 0 && rr.top < vh) ruta.style.setProperty('--k', Math.max(0, Math.min(1, (vh - rr.top) / (vh + rr.height))).toFixed(4));
     }
     if (heroImg && !reduce && scrollY < vh * 1.2) heroImg.style.setProperty('--par', (scrollY * 0.12).toFixed(1) + 'px');
   }

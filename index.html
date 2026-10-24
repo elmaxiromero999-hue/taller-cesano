@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,800;1,900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=5">
 <script>document.documentElement.classList.add('js')</script>
 <script type="application/ld+json">
 {
@@ -174,6 +174,7 @@
         <a href="#contacto" class="srv__link" data-wa="servicio-pulido" data-msg="Hola Cesano, quiero consultar por pulido.">Consultar <span aria-hidden="true">→</span></a></div>
       </article>
       <article class="card card--orange srv__card srv__card--cta reveal">
+        <img class="srv__pop" src="assets/img/recorte-pintor.webp" alt="" width="347" height="729" loading="lazy">
         <div class="srv__body"><span class="nro">¿?</span><h3>¿No sabés qué necesita tu auto?</h3><p>Sacale tres fotos al daño y mandalas. Te decimos qué tiene y cuánto sale.</p>
         <a href="#contacto" class="btn btn--white" data-wa="servicio-otro" data-msg="Hola Cesano, no sé bien qué necesita mi auto. Te mando fotos.">Enviar fotos</a></div>
       </article>
@@ -191,10 +192,15 @@
       <p class="confirmar confirmar--white">[CONFIRMAR: qué cubre y si se entrega por escrito]</p>
       <a href="#contacto" class="btn btn--white btn--lg" data-wa="garantia" data-msg="Hola Cesano, quiero un presupuesto con garantía de 5 años.">Pedí tu presupuesto</a>
     </div>
-    <figure class="garantia__cert reveal">
-      <img src="assets/img/entrega-llaves.webp" alt="Imagen de referencia: entrega de llaves de un auto terminado" loading="lazy" width="1344" height="768">
-      <figcaption>Recién salido</figcaption>
-    </figure>
+    <div class="garantia__visual reveal reveal--drive">
+      <div class="vel vel--garantia" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <img class="garantia__auto" src="assets/img/recorte-sedan.webp" alt="Imagen de referencia: sedán gris oscuro recién terminado" width="1012" height="473" loading="lazy">
+      <div class="sello" aria-hidden="true">
+        <svg viewBox="0 0 200 200"><defs><path id="sello-circ" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs>
+          <text textLength="462" lengthAdjust="spacing"><textPath href="#sello-circ">5 AÑOS DE GARANTÍA · TODOS LOS TRABAJOS ·</textPath></text></svg>
+        <b>5<small>años</small></b>
+      </div>
+    </div>
   </div>
   <svg class="garantia__franja franja franja--white" viewBox="0 1001.73 593.21 78.27" aria-hidden="true">
     <path d="M 0 1001.738281 L 0 1080 L 194.980469 1080 L 231.820312 1001.738281 Z"/>
@@ -224,6 +230,17 @@
       </div>
     </div>
     <div class="center"><a href="#contacto" class="btn btn--orange btn--lg" data-wa="seguros" data-msg="Hola Cesano, tuve un choque y quiero hacerlo por el seguro. Te mando fotos.">Empezar por WhatsApp</a></div>
+  </div>
+</section>
+
+<!-- ============ RECIÉN SALIDO (el auto cruza con el scroll) ============ -->
+<section class="ruta" aria-label="Recién salido del taller" style="--k:.5">
+  <div class="wrap"><p class="ruta__h reveal">Recién salido del taller. <span class="o">Con 5 años de garantía.</span></p></div>
+  <div class="ruta__pista" aria-hidden="true">
+    <div class="ruta__auto">
+      <img src="assets/img/recorte-auto-lateral.webp" alt="" width="906" height="314" loading="lazy">
+      <div class="vel vel--ruta"><i></i><i></i><i></i></div>
+    </div>
   </div>
 </section>
 
@@ -381,6 +398,6 @@
   <button class="toast__x" type="button" aria-label="Cerrar">×</button>
 </div>
 
-<script src="main.js"></script>
+<script src="main.js?v=5"></script>
 </body>
 </html>
