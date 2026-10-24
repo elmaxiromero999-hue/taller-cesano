@@ -269,6 +269,13 @@ bloque('ticker', () => {
   }
 });
 
+/* ---------------- CINTA ANIMADA ---------------- */
+bloque('cinta', () => {
+  const t = $('.cinta__track');
+  if (!t) return;
+  [...t.children].forEach((n) => t.appendChild(n.cloneNode(true))); // segunda vuelta para que el loop no se corte
+});
+
 /* ---------------- ANTES / HOY ---------------- */
 bloque('antes-hoy', () => {
   const ah = $('.ah'), sw = $('.switch');
@@ -324,18 +331,13 @@ bloque('antes-despues', () => {
 bloque('scroll', () => {
   const hdr = $('.hdr'), tl = $('.tl'), heroImg = $('.hero__img img');
   const tlItems = $$('.tl__i');
-  let tick = false, ultimoY = scrollY;
+  let tick = false;
   function onScroll() {
     tick = false;
     const vh = innerHeight;
     if (hdr) {
       hdr.classList.toggle('is-scrolled', scrollY > 8);
-      // se esconde al bajar y vuelve al subir; la barra muestra cuánto falta
-      const dy = scrollY - ultimoY;
-      if (Math.abs(dy) > 6) {
-        hdr.classList.toggle('is-hidden', dy > 0 && scrollY > vh * 0.6);
-        ultimoY = scrollY;
-      }
+      // la barra naranja muestra cuánto falta de la página (el menú queda siempre visible)
       const total = document.documentElement.scrollHeight - vh;
       hdr.style.setProperty('--prog', total > 0 ? (scrollY / total).toFixed(4) : 0);
     }

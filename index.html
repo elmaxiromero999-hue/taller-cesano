@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,800;1,900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=9">
+<link rel="stylesheet" href="styles.css?v=13">
 <script>document.documentElement.classList.add('js')</script>
 <script type="application/ld+json">
 {
@@ -122,6 +122,7 @@
     </div>
     <p class="hero__tel"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>¿Preferís hablar? Llamanos al <a href="tel:+543514617662" data-tel="hero">(0351) 461-7662</a></p>
   </div>
+  <div class="hero__badge" aria-hidden="true"><b>5</b><span>años de garantía<br>en todos los trabajos</span></div>
   <figure class="hero__img">
     <img src="assets/img/hero-taller-sedan.webp" alt="Imagen de referencia: chapista con uniforme blanco y naranja revisando un sedán en el taller" width="1344" height="768" fetchpriority="high">
   </figure>
@@ -142,10 +143,14 @@
   </div>
 </section>
 
+<div class="cinta" aria-hidden="true">
+  <div class="cinta__track"><span>Chapa</span><i></i><span>Pintura</span><i></i><span>Granizo</span><i></i><span>Color exacto</span><i></i><span>Pulido</span><i></i><span>Desde 1959</span><i></i></div>
+</div>
+
 <!-- ============ 3. SERVICIOS ============ -->
 <section class="sec" id="servicios">
   <div class="wrap">
-    <p class="eyebrow">Servicios</p>
+    <p class="eyebrow"><b>01</b>Servicios</p>
     <h2 class="h2 reveal">Lo que hacemos <span class="o">y cómo lo hacemos.</span></h2>
     <p class="srv__hint" aria-hidden="true">Deslizá para ver los 5 servicios →</p>
     <div class="srv">
@@ -175,7 +180,7 @@
         <a href="#contacto" class="srv__link" data-wa="servicio-pulido" data-msg="Hola Cesano, quiero consultar por pulido.">Consultar <span aria-hidden="true">→</span></a></div>
       </article>
       <article class="card card--orange srv__card srv__card--cta reveal">
-        <img class="srv__pop" src="assets/img/recorte-pintor.webp" alt="" width="555" height="1166" loading="lazy">
+        <img class="srv__pop" src="assets/img/recorte-pintor.webp" alt="" width="484" height="717" loading="lazy">
         <div class="srv__body"><span class="nro">¿?</span><h3>¿No sabés qué necesita tu auto?</h3><p>Sacale tres fotos al daño y mandalas. Te decimos qué tiene y cuánto sale.</p>
         <a href="#contacto" class="btn btn--white" data-wa="servicio-otro" data-msg="Hola Cesano, no sé bien qué necesita mi auto. Te mando fotos.">Enviar fotos</a></div>
       </article>
@@ -207,7 +212,7 @@
 <!-- ============ 5. SEGUROS ============ -->
 <section class="sec" id="seguros">
   <div class="wrap">
-    <p class="eyebrow">Seguros</p>
+    <p class="eyebrow"><b>02</b>Seguros</p>
     <h2 class="h2 reveal">¿Chocaste? <span class="o">Del seguro nos ocupamos nosotros.</span></h2>
     <div class="pasos" aria-label="Cómo es el trámite con el seguro">
       <button type="button" class="paso is-on" aria-pressed="true"><span class="nro">01</span><b>Mandanos fotos</b><small>Sacale tres fotos al daño y mandalas por WhatsApp.</small><i class="paso__bar"></i></button>
@@ -252,7 +257,7 @@
 <section class="sec" id="trabajos">
   <div class="wrap trabajos">
     <div class="trabajos__txt">
-      <p class="eyebrow">Trabajos</p>
+      <p class="eyebrow"><b>03</b>Trabajos</p>
       <h2 class="h2 reveal">Antes y <span class="o">después.</span></h2>
       <p>Arrastrá la línea y mirá la diferencia.</p>
       <p class="confirmar">[Vista de ejemplo: acá van fotos reales de trabajos del taller]</p>
@@ -270,7 +275,7 @@
 <!-- ============ 8. HISTORIA ============ -->
 <section class="sec sec--light" id="historia">
   <div class="wrap">
-    <p class="eyebrow">Historia</p>
+    <p class="eyebrow"><b>04</b>Historia</p>
     <h2 class="h2 reveal">Tres generaciones, <span class="o">tres saltos.</span></h2>
     <div class="hist">
       <figure class="hist__img reveal"><img src="assets/img/historia-manos-generaciones.webp" alt="Imagen de referencia: manos de distintas generaciones trabajando sobre la chapa" loading="lazy" width="1344" height="768"></figure>
@@ -312,7 +317,7 @@
 <section class="sec" id="preguntas">
   <div class="wrap faq">
     <div>
-      <p class="eyebrow">Preguntas frecuentes</p>
+      <p class="eyebrow"><b>05</b>Preguntas frecuentes</p>
       <h2 class="h2 reveal">Lo que todos <span class="o">nos preguntan.</span></h2>
     </div>
     <div class="faq__list">
@@ -326,11 +331,34 @@
   </div>
 </section>
 
+<!-- ============ CIERRE ============ -->
+<section class="cta-final" aria-labelledby="cta-final-h">
+  <svg class="cta-final__iso" viewBox="593.21 383.46 733.57 313.09" aria-hidden="true">
+        <path d="M 593.214844 696.542969 L 806.253906 696.542969 L 843.09375 618.28125 L 630.515625 618.28125 Z"/>
+        <path d="M 951.050781 618.28125 L 914.210938 696.542969 L 1072.820312 696.542969 L 1110.027344 618.28125 Z"/>
+        <path d="M 1094.527344 696.542969 L 1253.105469 696.539062 L 1289.945312 618.277344 L 1131.363281 618.28125 Z"/>
+        <path d="M 916.503906 461.761719 L 953.613281 383.5 L 867.285156 383.496094 L 756.765625 618.28125 L 880.214844 539.429688 Z"/>
+        <path d="M 1024.929688 461.761719 L 1061.566406 383.5 L 975.238281 383.5 L 864.71875 618.28125 L 951.050781 618.28125 L 987.710938 540.019531 Z"/>
+        <path d="M 1169.84375 383.496094 L 1054.613281 444.894531 L 982.238281 598.292969 L 1068.40625 598.636719 L 1133.007812 461.757812 L 1289.945312 461.71875 L 1326.785156 383.457031 Z"/>
+      </svg>
+  <div class="wrap">
+    <h2 class="cta-final__h" id="cta-final-h" aria-label="¿Chocaste? Mandanos fotos.">
+      <span class="cta-final__rot" aria-hidden="true"><span class="cta-final__in"><span>¿Chocaste?</span><span>¿Granizo?</span><span>¿Un raspón?</span><span>¿Se rayó?</span><span>¿Chocaste?</span></span></span>
+      <span class="cta-final__fijo" aria-hidden="true">Mandanos fotos.</span>
+    </h2>
+    <p class="cta-final__sub">Te respondemos con el presupuesto y te decimos cómo seguir con tu seguro.</p>
+    <div class="cta-final__ctas">
+      <a href="#contacto" class="btn btn--white btn--lg" data-wa="cierre" data-msg="Hola Cesano, quiero un presupuesto. Te mando fotos del daño."><span>Enviar fotos por WhatsApp</span><i class="btn__arr" aria-hidden="true"></i></a>
+      <a href="tel:+543514617662" class="cta-final__tel" data-tel="cierre">o llamanos al (0351) 461-7662</a>
+    </div>
+  </div>
+</section>
+
 <!-- ============ 12. CONTACTO ============ -->
 <section class="contacto" id="contacto">
   <div class="contacto__grid">
     <div class="contacto__info">
-      <p class="eyebrow">Contacto</p>
+      <p class="eyebrow"><b>06</b>Contacto</p>
       <h2 class="h2">Vení a conocer <span class="o">el taller.</span></h2>
       <dl class="datosc">
         <div><dt>Dirección</dt><dd>Av. Armada Argentina 179<br>B° Las Flores · CP 5016 · Córdoba</dd></div>
@@ -382,6 +410,6 @@
   <button class="toast__x" type="button" aria-label="Cerrar">×</button>
 </div>
 
-<script src="main.js?v=10"></script>
+<script src="main.js?v=11"></script>
 </body>
 </html>
