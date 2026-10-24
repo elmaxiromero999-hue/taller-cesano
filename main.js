@@ -35,7 +35,22 @@ bloque('reveal', () => {
       revObs.unobserve(en.target);
     });
   }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
-  $$('.reveal').forEach((el) => revObs.observe(el));
+  $$('.reveal:not(.h2)').forEach((el) => revObs.observe(el));
+
+  // los títulos arrancan enmascarados (clip-path) y el observer no los ve: se mira su contenedor
+  const titulos = new Map();
+  const h2Obs = new IntersectionObserver((entries) => {
+    entries.forEach((en) => {
+      if (!en.isIntersecting) return;
+      titulos.get(en.target).forEach((h) => h.classList.add('is-in'));
+      h2Obs.unobserve(en.target);
+    });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0 });
+  $$('.h2.reveal').forEach((h) => {
+    const p = h.parentElement;
+    if (!titulos.has(p)) { titulos.set(p, []); h2Obs.observe(p); }
+    titulos.get(p).push(h);
+  });
 });
 
 bloque('contadores', () => {
@@ -72,6 +87,18 @@ bloque('intro', () => {
   if (!intro || directo || (visto && !params.has('intro'))) {
     if (intro) intro.remove();
     ready();
+    // enlace directo: ir a la sección una vez que la página tomó su altura final
+    if (directo) {
+      const ir = () => {
+        let destino = null;
+        try { destino = document.querySelector(decodeURIComponent(location.hash)); } catch (e) {}
+        if (destino) destino.scrollIntoView({ behavior: 'instant', block: 'start' }); // instantáneo: el smooth se corta mientras carga
+      };
+      if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+      requestAnimationFrame(ir);
+      if (document.fonts) document.fonts.ready.then(ir);
+      window.addEventListener('load', () => setTimeout(ir, 60), { once: true });
+    }
     return;
   }
 
@@ -295,23 +322,28 @@ bloque('antes-despues', () => {
 
 /* ---------------- SCROLL: HEADER, LÍNEA DE TIEMPO, PARALLAX ---------------- */
 bloque('scroll', () => {
-  const hdr = $('.hdr'), tl = $('.tl'), heroImg = $('.hero__img img'), ruta = $('.ruta');
+  const hdr = $('.hdr'), tl = $('.tl'), heroImg = $('.hero__img img');
   const tlItems = $$('.tl__i');
-  let tick = false;
+  let tick = false, ultimoY = scrollY;
   function onScroll() {
     tick = false;
     const vh = innerHeight;
-    if (hdr) hdr.classList.toggle('is-scrolled', scrollY > 8);
+    if (hdr) {
+      hdr.classList.toggle('is-scrolled', scrollY > 8);
+      // se esconde al bajar y vuelve al subir; la barra muestra cuánto falta
+      const dy = scrollY - ultimoY;
+      if (Math.abs(dy) > 6) {
+        hdr.classList.toggle('is-hidden', dy > 0 && scrollY > vh * 0.6);
+        ultimoY = scrollY;
+      }
+      const total = document.documentElement.scrollHeight - vh;
+      hdr.style.setProperty('--prog', total > 0 ? (scrollY / total).toFixed(4) : 0);
+    }
     if (tl) {
       const r = tl.getBoundingClientRect();
       const marca = vh * 0.62;
       tl.style.setProperty('--p', Math.max(0, Math.min(1, (marca - r.top) / r.height)).toFixed(3));
       tlItems.forEach((li) => li.classList.toggle('is-on', li.getBoundingClientRect().top < marca));
-    }
-    // el auto de "Recién salido" cruza la pantalla de derecha a izquierda según el scroll
-    if (ruta && !reduce) {
-      const rr = ruta.getBoundingClientRect();
-      if (rr.bottom > 0 && rr.top < vh) ruta.style.setProperty('--k', Math.max(0, Math.min(1, (vh - rr.top) / (vh + rr.height))).toFixed(4));
     }
     if (heroImg && !reduce && scrollY < vh * 1.2) heroImg.style.setProperty('--par', (scrollY * 0.12).toFixed(1) + 'px');
   }
@@ -319,4 +351,38 @@ bloque('scroll', () => {
     if (!tick) { tick = true; requestAnimationFrame(onScroll); }
   }, { passive: true });
   onScroll();
+});
+
+/* ---------------- EFECTOS CON MOUSE (solo en equipos con puntero) ---------------- */
+bloque('mouse', () => {
+  if (reduce || !matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
+  // imán: el botón se acerca un poco al cursor
+  $$('[data-magnet]').forEach((el) => {
+    el.addEventListener('pointermove', (e) => {
+      const r = el.getBoundingClientRect();
+      const x = (e.clientX - r.left - r.width / 2) * 0.3;
+      const y = (e.clientY - r.top - r.height / 2) * 0.3;
+      el.style.translate = `${x.toFixed(1)}px ${y.toFixed(1)}px`;
+    });
+    el.addEventListener('pointerleave', () => { el.style.translate = ''; });
+  });
+
+  // garantía: el auto se inclina según la posición del mouse y el sello acompaña
+  const vis = $('.garantia__visual');
+  if (vis) {
+    const zona = vis.closest('.garantia') || vis;
+    zona.addEventListener('pointermove', (e) => {
+      const r = vis.getBoundingClientRect();
+      const nx = Math.max(-1, Math.min(1, (e.clientX - r.left - r.width / 2) / (r.width / 2)));
+      const ny = Math.max(-1, Math.min(1, (e.clientY - r.top - r.height / 2) / (r.height / 2)));
+      vis.style.setProperty('--ry', (nx * 7).toFixed(2) + 'deg');
+      vis.style.setProperty('--rx', (ny * -4).toFixed(2) + 'deg');
+      vis.style.setProperty('--sx', (nx * -12).toFixed(1) + 'px');
+      vis.style.setProperty('--sy', (ny * -8).toFixed(1) + 'px');
+    });
+    zona.addEventListener('pointerleave', () => {
+      ['--ry', '--rx', '--sx', '--sy'].forEach((v) => vis.style.removeProperty(v));
+    });
+  }
 });

@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,800;1,900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=5">
+<link rel="stylesheet" href="styles.css?v=9">
 <script>document.documentElement.classList.add('js')</script>
 <script type="application/ld+json">
 {
@@ -94,6 +94,7 @@
 
 <!-- ============ HEADER ============ -->
 <header class="hdr" id="top">
+  <span class="hdr__prog" aria-hidden="true"></span>
   <div class="hdr__in">
     <a href="#top" class="hdr__logo" aria-label="Cesano, ir al inicio"><img src="assets/logo/horizontal-color.svg" alt="Cesano" width="916" height="111"></a>
     <nav class="hdr__nav" id="menu" aria-label="Principal">
@@ -116,7 +117,7 @@
     <h1 class="hero__h1"><span class="eyebrow">Chapa y pintura en Córdoba · Desde 1959</span><span class="ln"><span>A la vanguardia,</span></span><span class="ln ln--o"><span>con alma.</span></span></h1>
     <p class="hero__sub">Chapa y pintura en Córdoba desde 1959. Tres generaciones y 5&nbsp;años de garantía en todos los trabajos.</p>
     <div class="hero__ctas">
-      <a href="#contacto" class="btn btn--orange btn--lg" data-wa="hero" data-msg="Hola Cesano, quiero un presupuesto. Te mando fotos del daño.">Mandanos fotos y te presupuestamos</a>
+      <a href="#contacto" class="btn btn--orange btn--lg" data-wa="hero" data-msg="Hola Cesano, quiero un presupuesto. Te mando fotos del daño."><span>Mandanos fotos y te presupuestamos</span><i class="btn__arr" aria-hidden="true"></i></a>
       <a href="#seguros" class="btn btn--line btn--lg">Trabajamos con tu seguro</a>
     </div>
     <p class="hero__tel"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>¿Preferís hablar? Llamanos al <a href="tel:+543514617662" data-tel="hero">(0351) 461-7662</a></p>
@@ -174,7 +175,7 @@
         <a href="#contacto" class="srv__link" data-wa="servicio-pulido" data-msg="Hola Cesano, quiero consultar por pulido.">Consultar <span aria-hidden="true">→</span></a></div>
       </article>
       <article class="card card--orange srv__card srv__card--cta reveal">
-        <img class="srv__pop" src="assets/img/recorte-pintor.webp" alt="" width="347" height="729" loading="lazy">
+        <img class="srv__pop" src="assets/img/recorte-pintor.webp" alt="" width="555" height="1166" loading="lazy">
         <div class="srv__body"><span class="nro">¿?</span><h3>¿No sabés qué necesita tu auto?</h3><p>Sacale tres fotos al daño y mandalas. Te decimos qué tiene y cuánto sale.</p>
         <a href="#contacto" class="btn btn--white" data-wa="servicio-otro" data-msg="Hola Cesano, no sé bien qué necesita mi auto. Te mando fotos.">Enviar fotos</a></div>
       </article>
@@ -190,11 +191,10 @@
       <h2 class="garantia__h"><span class="garantia__num"><span data-count="5">5</span></span> años de garantía.</h2>
       <p class="garantia__sub">En todos los trabajos. La damos porque sabemos cómo trabajamos.</p>
       <p class="confirmar confirmar--white">[CONFIRMAR: qué cubre y si se entrega por escrito]</p>
-      <a href="#contacto" class="btn btn--white btn--lg" data-wa="garantia" data-msg="Hola Cesano, quiero un presupuesto con garantía de 5 años.">Pedí tu presupuesto</a>
+      <a href="#contacto" class="btn btn--white btn--lg" data-wa="garantia" data-msg="Hola Cesano, quiero un presupuesto con garantía de 5 años."><span>Pedí tu presupuesto</span><i class="btn__arr" aria-hidden="true"></i></a>
     </div>
     <div class="garantia__visual reveal reveal--drive">
-      <div class="vel vel--garantia" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-      <img class="garantia__auto" src="assets/img/recorte-sedan.webp" alt="Imagen de referencia: sedán gris oscuro recién terminado" width="1012" height="473" loading="lazy">
+      <img class="garantia__auto" src="assets/img/recorte-sedan.webp" alt="Imagen de referencia: sedán gris oscuro recién terminado" width="1518" height="709" loading="lazy">
       <div class="sello" aria-hidden="true">
         <svg viewBox="0 0 200 200"><defs><path id="sello-circ" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs>
           <text textLength="462" lengthAdjust="spacing"><textPath href="#sello-circ">5 AÑOS DE GARANTÍA · TODOS LOS TRABAJOS ·</textPath></text></svg>
@@ -202,11 +202,6 @@
       </div>
     </div>
   </div>
-  <svg class="garantia__franja franja franja--white" viewBox="0 1001.73 593.21 78.27" aria-hidden="true">
-    <path d="M 0 1001.738281 L 0 1080 L 194.980469 1080 L 231.820312 1001.738281 Z"/>
-    <path d="M 254.320312 1001.738281 L 217.480469 1080 L 376.089844 1080 L 413.296875 1001.738281 Z"/>
-    <path d="M 434.632812 1001.738281 L 397.796875 1080 L 556.375 1079.996094 L 593.214844 1001.734375 Z"/>
-  </svg>
 </section>
 
 <!-- ============ 5. SEGUROS ============ -->
@@ -229,18 +224,7 @@
         </ul>
       </div>
     </div>
-    <div class="center"><a href="#contacto" class="btn btn--orange btn--lg" data-wa="seguros" data-msg="Hola Cesano, tuve un choque y quiero hacerlo por el seguro. Te mando fotos.">Empezar por WhatsApp</a></div>
-  </div>
-</section>
-
-<!-- ============ RECIÉN SALIDO (el auto cruza con el scroll) ============ -->
-<section class="ruta" aria-label="Recién salido del taller" style="--k:.5">
-  <div class="wrap"><p class="ruta__h reveal">Recién salido del taller. <span class="o">Con 5 años de garantía.</span></p></div>
-  <div class="ruta__pista" aria-hidden="true">
-    <div class="ruta__auto">
-      <img src="assets/img/recorte-auto-lateral.webp" alt="" width="906" height="314" loading="lazy">
-      <div class="vel vel--ruta"><i></i><i></i><i></i></div>
-    </div>
+    <div class="center"><a href="#contacto" class="btn btn--orange btn--lg" data-wa="seguros" data-msg="Hola Cesano, tuve un choque y quiero hacerlo por el seguro. Te mando fotos."><span>Empezar por WhatsApp</span><i class="btn__arr" aria-hidden="true"></i></a></div>
   </div>
 </section>
 
@@ -388,7 +372,7 @@
   <p class="pie__legal wrap">Maqueta de propuesta · Las fotos son imágenes de referencia, no del taller.</p>
 </footer>
 
-<a href="#contacto" class="fab" data-wa="flotante" data-msg="Hola Cesano, quiero un presupuesto. Te mando fotos del daño." aria-label="Presupuesto por WhatsApp">
+<a href="#contacto" class="fab" data-magnet data-wa="flotante" data-msg="Hola Cesano, quiero un presupuesto. Te mando fotos del daño." aria-label="Presupuesto por WhatsApp">
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.7.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>
 </a>
 
@@ -398,6 +382,6 @@
   <button class="toast__x" type="button" aria-label="Cerrar">×</button>
 </div>
 
-<script src="main.js?v=5"></script>
+<script src="main.js?v=10"></script>
 </body>
 </html>
