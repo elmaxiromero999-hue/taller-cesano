@@ -8,6 +8,15 @@
 <!-- Maqueta para presentar al cliente: que no compita con un sitio oficial -->
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#FF3100">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:site_name" content="Taller Cesano">
+<meta property="og:title" content="Chapa y pintura en Córdoba desde 1959 | Taller Cesano">
+<meta property="og:description" content="Tres generaciones y 5 años de garantía en todos los trabajos. Trabajamos con tu seguro. Av. Armada Argentina 179, Córdoba.">
+<meta property="og:image" content="https://elmaxiromero999-hue.github.io/taller-cesano/assets/img/og-cesano.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/logo/caja-color.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,6 +45,7 @@
 </script>
 </head>
 <body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
 
 <!-- ============ INTRO ============ -->
 <div id="intro" class="intro" role="dialog" aria-modal="true" aria-label="Presentación de Cesano">
@@ -74,6 +84,7 @@
       <path d="M 434.632812 1001.738281 L 397.796875 1080 L 556.375 1079.996094 L 593.214844 1001.734375 Z"/>
     </svg>
 
+    <button class="intro__skip" type="button">Saltar intro</button>
     <button class="intro__enter" type="button">
       <span class="intro__chev" aria-hidden="true"><i></i><i></i></span>
       <span class="intro__enter-txt">Deslizá para entrar</span>
@@ -93,21 +104,22 @@
       <a href="#contacto">Contacto</a>
       <a href="#contacto" class="btn btn--orange hdr__cta" data-wa="header" data-msg="Hola Cesano, quiero un presupuesto. Te mando fotos del daño.">Presupuesto por WhatsApp</a>
     </nav>
+    <a class="hdr__tel" href="tel:+543514617662" data-tel="header" aria-label="Llamar al (0351) 461-7662"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg><span>(0351) 461-7662</span></a>
     <button class="hdr__burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-<main>
+<main id="contenido" tabindex="-1">
 <!-- ============ 1. HERO ============ -->
 <section class="hero">
   <div class="hero__txt">
-    <p class="eyebrow">Chapa y pintura · Córdoba · Desde 1959</p>
-    <h1 class="hero__h1"><span class="ln"><span>A la vanguardia,</span></span><span class="ln ln--o"><span>con alma.</span></span></h1>
+    <h1 class="hero__h1"><span class="eyebrow">Chapa y pintura en Córdoba · Desde 1959</span><span class="ln"><span>A la vanguardia,</span></span><span class="ln ln--o"><span>con alma.</span></span></h1>
     <p class="hero__sub">Chapa y pintura en Córdoba desde 1959. Tres generaciones y 5&nbsp;años de garantía en todos los trabajos.</p>
     <div class="hero__ctas">
       <a href="#contacto" class="btn btn--orange btn--lg" data-wa="hero" data-msg="Hola Cesano, quiero un presupuesto. Te mando fotos del daño.">Mandanos fotos y te presupuestamos</a>
       <a href="#seguros" class="btn btn--line btn--lg">Trabajamos con tu seguro</a>
     </div>
+    <p class="hero__tel"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>¿Preferís hablar? Llamanos al <a href="tel:+543514617662" data-tel="hero">(0351) 461-7662</a></p>
   </div>
   <figure class="hero__img">
     <img src="assets/img/hero-taller-sedan.webp" alt="Imagen de referencia: chapista con uniforme blanco y naranja revisando un sedán en el taller" width="1344" height="768" fetchpriority="high">
@@ -134,6 +146,7 @@
   <div class="wrap">
     <p class="eyebrow">Servicios</p>
     <h2 class="h2 reveal">Lo que hacemos <span class="o">y cómo lo hacemos.</span></h2>
+    <p class="srv__hint" aria-hidden="true">Deslizá para ver los 5 servicios →</p>
     <div class="srv">
       <article class="card srv__card reveal">
         <div class="srv__img"><img src="assets/img/servicio-banco-estirado.webp" alt="Imagen de referencia: auto sobre un banco de estirado" loading="lazy" width="1344" height="768"></div>
@@ -225,10 +238,10 @@
       <span class="switch__knob" aria-hidden="true"></span>
     </div>
     <div class="ah" data-epoca="hoy">
-      <div class="ah__item reveal"><span class="ah__antes">Una cadena y un muerto</span><span class="ah__hoy">Banco de estirado computarizado</span></div>
-      <div class="ah__item reveal"><span class="ah__antes">Autógena</span><span class="ah__hoy">Soldadura MIG y por punto</span></div>
-      <div class="ah__item reveal"><span class="ah__antes">Martillo y aguantador</span><span class="ah__hoy">Sacabollos para granizo</span></div>
-      <div class="ah__item reveal"><span class="ah__antes">Guardabarros hechos a mano</span><span class="ah__hoy">2 cabinas de pintura (y 2 más en camino)</span></div>
+      <div class="ah__item reveal"><span class="ah__antes">Una cadena y un muerto<small>El auto se anclaba al piso y se tiraba del chasis a pulso.</small></span><span class="ah__hoy">Banco de estirado computarizado<small>Mide el chasis contra las medidas de fábrica.</small></span></div>
+      <div class="ah__item reveal"><span class="ah__antes">Autógena<small>Soldadura con llama de gas.</small></span><span class="ah__hoy">Soldadura MIG y por punto<small>Uniones prolijas, como las de fábrica.</small></span></div>
+      <div class="ah__item reveal"><span class="ah__antes">Martillo y aguantador<small>Golpe de un lado, apoyo del otro.</small></span><span class="ah__hoy">Sacabollos para granizo<small>Saca el bollo sin repintar.</small></span></div>
+      <div class="ah__item reveal"><span class="ah__antes">Guardabarros hechos a mano<small>Cada pieza, una por una.</small></span><span class="ah__hoy">2 cabinas de pintura<small>Y 2 más en camino. Se pinta sin polvo en el aire.</small></span></div>
     </div>
     <p class="ah__pie reveal">Innovar es lo que hacemos desde siempre.</p>
   </div>
@@ -294,6 +307,24 @@
   </div>
 </section>
 
+<!-- ============ PREGUNTAS ============ -->
+<section class="sec" id="preguntas">
+  <div class="wrap faq">
+    <div>
+      <p class="eyebrow">Preguntas frecuentes</p>
+      <h2 class="h2 reveal">Lo que todos <span class="o">nos preguntan.</span></h2>
+    </div>
+    <div class="faq__list">
+      <details class="faq__i"><summary>¿Cómo pido un presupuesto?</summary><p>Sacale tres fotos al daño y mandalas por WhatsApp, o vení al taller en Av. Armada Argentina 179. Te respondemos con el presupuesto.</p></details>
+      <details class="faq__i"><summary>¿Trabajan con mi seguro?</summary><p>Trabajamos con la mayoría de las aseguradoras y nos ocupamos del trámite con tu compañía. <span class="confirmar">[CONFIRMAR lista]</span></p></details>
+      <details class="faq__i"><summary>¿Qué cubre la garantía?</summary><p>Todos nuestros trabajos tienen 5 años de garantía. <span class="confirmar">[CONFIRMAR qué cubre]</span></p></details>
+      <details class="faq__i"><summary>¿Cuánto tarda el arreglo?</summary><p>Depende del daño. Te lo decimos junto con el presupuesto, antes de que dejes el auto.</p></details>
+      <details class="faq__i"><summary>¿El granizo se arregla sin pintar?</summary><p>En muchos casos, sí: con sacabollos sacamos el bollo y la pintura original queda intacta. Mandanos fotos y te decimos.</p></details>
+      <details class="faq__i"><summary>¿Puedo ir a conocer el taller?</summary><p>Sí, vení cuando quieras en horario de atención. <span class="confirmar">[CONFIRMAR horarios]</span></p></details>
+    </div>
+  </div>
+</section>
+
 <!-- ============ 12. CONTACTO ============ -->
 <section class="contacto" id="contacto">
   <div class="contacto__grid">
@@ -330,7 +361,7 @@
       <p><b>Taller José Luis Cesano SRL</b><br>Chapa y pintura en Córdoba desde 1959.</p>
       <p><a href="https://www.google.com/maps/search/?api=1&query=Av.+Armada+Argentina+179,+C%C3%B3rdoba,+Argentina" target="_blank" rel="noopener">Av. Armada Argentina 179, Córdoba</a><br>Horarios: <span class="confirmar">[CONFIRMAR]</span><br><a href="tel:+543514617662">(0351) 461-7662</a> · <a href="https://www.instagram.com/tallercesano/" target="_blank" rel="noopener">@tallercesano</a></p>
     </div>
-    <nav class="pie__nav" aria-label="Pie"><a href="#servicios">Servicios</a><a href="#garantia">Garantía</a><a href="#seguros">Seguros</a><a href="#historia">Historia</a><a href="#trabaja">Trabajá con nosotros</a><a href="?intro">Ver la intro de nuevo</a></nav>
+    <nav class="pie__nav" aria-label="Pie"><a href="#servicios">Servicios</a><a href="#garantia">Garantía</a><a href="#seguros">Seguros</a><a href="#historia">Historia</a><a href="#preguntas">Preguntas frecuentes</a><a href="#trabaja">Trabajá con nosotros</a><a href="?intro">Ver la intro de nuevo</a></nav>
   </div>
   <svg class="pie__franja franja" viewBox="0 1001.73 593.21 78.27" aria-hidden="true">
     <path d="M 0 1001.738281 L 0 1080 L 194.980469 1080 L 231.820312 1001.738281 Z"/>

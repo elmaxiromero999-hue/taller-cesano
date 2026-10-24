@@ -67,7 +67,9 @@ bloque('intro', () => {
   const params = new URLSearchParams(location.search);
   let visto = false;
   try { visto = sessionStorage.getItem('cesano-intro') === '1'; } catch (e) {}
-  if (!intro || (visto && !params.has('intro'))) {
+  // si llega con un enlace directo (#contacto, #seguros…) va derecho a lo que buscaba
+  const directo = location.hash.length > 1 && !params.has('intro');
+  if (!intro || directo || (visto && !params.has('intro'))) {
     if (intro) intro.remove();
     ready();
     return;
@@ -108,6 +110,8 @@ bloque('intro', () => {
   window.addEventListener('wheel', onWheel, { passive: true });
   window.addEventListener('keydown', onKey);
   if (boton) boton.addEventListener('click', entrar);
+  const saltar = $('.intro__skip', intro);
+  if (saltar) saltar.addEventListener('click', entrar);
 
   // Deslizar hacia arriba (dedo o mouse), también arrancando sobre el botón: la cortina sigue el gesto
   let y0 = null, dy = 0;
